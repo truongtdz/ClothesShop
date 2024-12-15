@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới Thiệu - Clothes Shop</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: "Nunito", sans-serif;
+      }
+
+      /* Header Styles */
+      .header {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header .logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .header .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .header .header-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        margin-left: 15px;
+      }
+
+      /* Content Styles */
+      .intro-container {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 40px auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      .section-title {
+        color: #3498db;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f1f1f1;
+      }
+
+      .feature-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 40px;
+        color: #3498db;
+        margin-bottom: 15px;
+      }
+
+      .feature-title {
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .feature-text {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .value-item {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .value-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+      }
+
+      .value-icon {
+        font-size: 36px;
+        color: #3498db;
+        margin-bottom: 15px;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .intro-container {
+          margin: 20px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a
+            href="/home"
+            class="d-flex align-items-center text-decoration-none"
+          >
+            <img class="logo" th:src="@{/img/logoo.jpg}" alt="Logo" />
+            <h1 class="header-title">Clothes Shop</h1>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="intro-container">
+        <!-- Giới thiệu chung -->
+        <div class="section">
+          <h2 class="section-title">
+            <i class="fas fa-store mr-2"></i>Về Chúng Tôi
+          </h2>
+          <p>
+            Clothes Shop là địa chỉ tin cậy cung cấp đa dạng các sản phẩm thời trang hiện đại và chất lượng cao. 
+            Chúng tôi cam kết mang đến cho khách hàng những bộ sưu tập thời trang phong cách, phù hợp mọi lứa tuổi, cùng với dịch vụ tận tâm và giá cả hợp lý.
+          </p>
+        </div>
+
+        <!-- Đặc điểm nổi bật -->
+        <div class="section">
+          <h2 class="section-title">
+            <i class="fas fa-star mr-2"></i>Đặc Điểm Nổi Bật
+          </h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fas fa-leaf feature-icon"></i>
+                <h4 class="feature-title">Thời Trang Phong Cách</h4>
+                <p class="feature-text">
+                  Sản phẩm thời trang được thiết kế tinh tế,
+                  đảm bảo mang lại sự thoải mái và tự tin cho bạn
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fas fa-truck feature-icon"></i>
+                <h4 class="feature-title">Giao Hàng Nhanh Chóng</h4>
+                <p class="feature-text">
+                  Dịch vụ giao hàng trong ngày, đảm bảo sản phẩm đến tay khách
+                  hàng luôn tươi ngon.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fas fa-hand-holding-usd feature-icon"></i>
+                <h4 class="feature-title">Giá Cả Hợp Lý</h4>
+                <p class="feature-text">
+                  Cam kết giá cả cạnh tranh và nhiều chương trình khuyến mãi hấp
+                  dẫn.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giá trị cốt lõi -->
+        <div class="section">
+          <h2 class="section-title">
+            <i class="fas fa-heart mr-2"></i>Giá Trị Cốt Lõi
+          </h2>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="value-item">
+                <i class="fas fa-check-circle value-icon"></i>
+                <h5>Chất Lượng</h5>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="value-item">
+                <i class="fas fa-handshake value-icon"></i>
+                <h5>Uy Tín</h5>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="value-item">
+                <i class="fas fa-heart value-icon"></i>
+                <h5>Tận Tâm</h5>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="value-item">
+                <i class="fas fa-sync-alt value-icon"></i>
+                <h5>Đổi Mới</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cam kết -->
+        <div class="section">
+          <h2 class="section-title">
+            <i class="fas fa-shield-alt mr-2"></i>Cam Kết
+          </h2>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>100% sản phẩm thời trang chính hãng, chất lượng cao
+                </li>
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>Đổi trả trong
+                  vòng 24h
+                </li>
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>Giao hàng đúng
+                  hẹn
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>Tư vấn nhiệt
+                  tình
+                </li>
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>Giá cả hợp lý
+                </li>
+                <li>
+                  <i class="fas fa-check text-success mr-2"></i>Hỗ trợ 24/7
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thông tin liên hệ -->
+        <div class="section">
+          <h2 class="section-title">
+            <i class="fas fa-phone-alt mr-2"></i>Thông Tin Liên Hệ
+          </h2>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <i class="fas fa-map-marker-alt text-success mr-2"></i>Địa chỉ:
+                Số 298 Đ. Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội
+              </p>
+              <p>
+                <i class="fas fa-phone text-success mr-2"></i>Hotline: 0123 456
+                789
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                <i class="fas fa-envelope text-success mr-2"></i>Email:
+                contact@clothesshop.com
+              </p>
+              <p>
+                <i class="fas fa-clock text-success mr-2"></i>Giờ làm việc: 8:00
+                - 22:00 (Thứ 2 - Chủ nhật)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
