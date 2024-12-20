@@ -3,6 +3,7 @@ package com.example.shop.controller;
 import com.example.shop.entity.Comment;
 import com.example.shop.entity.User;
 import com.example.shop.enums.GenderEnum;
+import com.example.shop.enums.StatusOrder;
 import com.example.shop.service.*;
 import jakarta.servlet.http.HttpSession;
 
@@ -144,5 +145,11 @@ public class UserController {
                 .addObject("orders", orderService.historyBuy(user.getId()));
         }
         else return new ModelAndView("redirect:/login");
+    }
+
+    @GetMapping("/order/{orderId}")
+    public String cancelOrder(@PathVariable("orderId") Long orderId) {
+        orderService.updateStatusOrder(orderId, StatusOrder.Da_Huy);
+        return "redirect:/user/history";
     }
 }

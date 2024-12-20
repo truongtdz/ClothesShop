@@ -251,14 +251,24 @@
                     class="text-success fw-bold"
                     th:text="${order.total} + '$'"
                   ></span>
-                </div>
-
-                <div class="total-amount">
                   <strong>Trạng thái: </strong>
                   <span
                           class="text-success fw-bold"
                           th:text="${order.status}"
                   ></span>
+                </div>
+
+                <div
+                        class="confirm-button"
+                        th:if="${order.status != 'Da_Huy'}"
+                >
+                  <a
+                          class="btn btn-info"
+                          th:href="@{/user/order/{id}(id=${order.id})}"
+                  >
+                    <i class="fas fa-check-circle me-2"></i>
+                    Hủy Đơn Hàng
+                  </a>
                 </div>
               </div>
             </div>
