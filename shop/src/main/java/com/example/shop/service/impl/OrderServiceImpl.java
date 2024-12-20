@@ -3,6 +3,7 @@ package com.example.shop.service.impl;
 import com.example.shop.entity.Item;
 import com.example.shop.entity.Order;
 import com.example.shop.entity.User;
+import com.example.shop.enums.StatusOrder;
 import com.example.shop.repository.ItemRepository;
 import com.example.shop.repository.OrderRepository;
 import com.example.shop.service.OrderService;
@@ -42,7 +43,7 @@ public class OrderServiceImpl implements OrderService {
 
         order.setDate(new Date());
         order.setUser(user);
-        order.setStatus("Đang Giao");
+        order.setStatus(StatusOrder.Dang_Giao.toString());
 
         orderRepository.save(order);
 
@@ -78,10 +79,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void confirmOrder(Long orderId) {
+    public void updateStatusOrder(Long orderId, StatusOrder status){
         Order order = orderRepository.findById(orderId).get();
 
-        order.setStatus("Đã Nhận");
+        order.setStatus(status.toString());
 
         orderRepository.save(order);
     }

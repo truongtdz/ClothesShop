@@ -145,10 +145,4 @@ public class UserController {
         }
         else return new ModelAndView("redirect:/login");
     }
-
-    @GetMapping("/confirm/{orderId}")
-    public String confirmOrder(@PathVariable Long orderId){
-        orderService.confirmOrder(orderId);
-        return "redirect:/user/history";
-    }
 }

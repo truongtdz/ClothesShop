@@ -1,5 +1,6 @@
 package com.example.shop.entity;
 
+import com.example.shop.enums.StatusOrder;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

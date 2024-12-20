@@ -5,6 +5,7 @@ import com.example.shop.entity.User;
 import com.example.shop.enums.BrandEnum;
 import com.example.shop.enums.CategoryEnum;
 import com.example.shop.enums.GenderEnum;
+import com.example.shop.enums.StatusOrder;
 import com.example.shop.service.ItemService;
 import com.example.shop.service.OrderService;
 import com.example.shop.service.ProductService;
@@ -152,7 +153,8 @@ public class AdminController {
     @GetMapping("/order")
     public ModelAndView orderManagement(){
         return new ModelAndView("/admin/order/management")
-                .addObject("orders", orderService.getAllOrder());
+                .addObject("orders", orderService.getAllOrder())
+                .addObject("status_orders", StatusOrder.values());
     }
 
     @GetMapping("/order/{orderId}")
@@ -160,5 +162,12 @@ public class AdminController {
         return new ModelAndView("/admin/order/view")
                 .addObject("order", orderService.getOrderById(orderId))
                 .addObject("items", itemService.getItemByOrderId(orderId));
+    }
+
+    @GetMapping("/order/{orderId}/{status}")
+    public String updateStatusOrder(@PathVariable("orderId") Long orderId,
+                                    @PathVariable("status") StatusOrder status) {
+        orderService.updateStatusOrder(orderId, status);
+        return "redirect:/admin/order";
     }
 }

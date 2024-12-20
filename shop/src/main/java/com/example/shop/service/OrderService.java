@@ -2,6 +2,7 @@ package com.example.shop.service;
 
 import com.example.shop.entity.Order;
 import com.example.shop.entity.User;
+import com.example.shop.enums.StatusOrder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +30,8 @@ public interface OrderService {
     // Total Price
     Long getIcrease();
 
-    // Confirm Order
-    void confirmOrder(Long orderId);
+    // Update Status Order
+    void updateStatusOrder(Long orderId, StatusOrder status);
+
 
 }

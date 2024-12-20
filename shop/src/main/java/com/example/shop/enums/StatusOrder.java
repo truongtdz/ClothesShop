@@ -2,5 +2,5 @@ package com.example.shop.enums;
 
 
 public enum StatusOrder {
-    ĐangGiao, ĐaNhan;
+    Da_Huy, Dang_Giao, Da_Nhan;
 }
